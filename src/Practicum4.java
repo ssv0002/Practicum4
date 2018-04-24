@@ -15,24 +15,35 @@ public class Practicum4 {
 		System.out.println("How many coins are you curious about?");
 		int k = input.nextInt();
 		
-		double[] coins = new double[n];
-		
-		for(int i = 0; i < n; i++){
-			coins[i] = Math.random();
+		if(1 <= m && m <= k && k <= n){
+			double[] coins = new double[n];
+			
+			for(int i = 0; i < coins.length; i++){
+				coins[i] = Math.random();
+			}
+			
+			int countHeads = 0;
+			
+			for(int i = 0; i < coins.length; i++){
+				if(coins[i] < .5){
+					coins[i] = 0;
+				}
+				else{
+					coins[i] = 1;
+					countHeads++;
+				}
+			}
+			
+			
+			
+		}
+		else{
+			System.out.println("invalid entry");
+			
+			
 		}
 		
-		int countHeads = 0;
-		
-		for(int i = 0; i < n; i++){
-			if(coins[i] < .5){
-				coins[i] = 0;
-			}
-			else{
-				coins[i] = 1;
-				countHeads++;
-			}
-		}
-		
+		input.close();
 		
 	}
 }
